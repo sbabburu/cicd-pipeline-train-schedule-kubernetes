@@ -28,7 +28,7 @@ pipeline {
             steps {
                 script {
                     withCredentials([string(credentialsId: 'docker-hub', variable: 'docker-hubpwd')]) {
-                        sh "docker login -u sbabburu -p Welcome@9541"
+                        sh "docker login -u sbabburu -p "
                         app.push("${env.BUILD_NUMBER}")
                         app.push("latest")
                 }
