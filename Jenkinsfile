@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    environment {
+    /*environment {
         //be sure to replace "willbla" with your own Docker Hub username
         DOCKER_IMAGE_NAME = "sbabburu/train-schedule"
     }
@@ -35,7 +35,8 @@ pipeline {
                     
                 }
             }
-        }
+        } 
+        */
         stage('DeployToProduction') {
             
             steps {
