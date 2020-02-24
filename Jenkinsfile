@@ -27,10 +27,11 @@ pipeline {
             
             steps {
                 script {
-                    docker.withRegistry('https://registry.hub.docker.com', 'docker_hub') {
+                    withCredentials([string(credentialsId: 'docker-hub', variable: 'docker-hubpwd')]) {
                         app.push("${env.BUILD_NUMBER}")
                         app.push("latest")
-                    }
+                }
+                    
                 }
             }
         }
