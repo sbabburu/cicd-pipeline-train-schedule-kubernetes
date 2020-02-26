@@ -9,7 +9,7 @@ spec:
   ports:
   - targetPort: 8080
     port: 8080
-    nodePort: 30089
+    nodePort: 31297
 
 ---
 
