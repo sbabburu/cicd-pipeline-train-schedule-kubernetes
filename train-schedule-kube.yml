@@ -7,8 +7,8 @@ spec:
   selector:
     app: train-schedule
   ports:
-  - targetPort: 8080
-    port: 8080
+  - targetPort: 80
+    port: 80
     nodePort: 31297
 
 ---
@@ -30,12 +30,10 @@ spec:
         app: train-schedule
     spec: 
       containers: 
-        - 
-          image: nginx
+         -image: nginx
           name: train-schedule
-          ports: 
-            - 
-              containerPort: 8080
+          ports:
+            - containerPort: 80
           resources: 
             limits: 
               cpu: 2
