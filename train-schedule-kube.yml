@@ -15,29 +15,31 @@ spec:
 
 apiVersion: apps/v1
 kind: Deployment
-metadata:
-  name: train-schedule-deployment
-  labels:
+metadata: 
+  labels: 
     app: train-schedule
-spec:
+  name: train-schedule-deployment
+spec: 
   replicas: 1
-  selector:
-    matchLabels:
+  selector: 
+    matchLabels: 
       app: train-schedule
-  template:
-    metadata:
-      labels:
+  template: 
+    metadata: 
+      labels: 
         app: train-schedule
-    spec:
-      containers:
-      - name: train-schedule
-        image: nginx
-        ports:
-        - containerPort: 80
-        resources:
-          requests:
-            memory: "1Gi"
-            cpu: 1
-           limits:
-             memory: "2Gi"
-             cpu : 2
+    spec: 
+      containers: 
+        - 
+          image: nginx
+          name: train-schedule
+          ports: 
+            - 
+              containerPort: 80
+          resources: 
+            limits: 
+              cpu: 2
+              memory: 2Gi
+            requests: 
+              cpu: 1
+              memory: 1Gi
